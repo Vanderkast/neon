@@ -1,0 +1,19 @@
+plugins {
+    id 'neon-convention'
+    id 'idea'
+}
+
+group 'com.vanderkast.neon'
+version '0.0-SNAPSHOT'
+
+dependencies {
+    compile project(':core')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}

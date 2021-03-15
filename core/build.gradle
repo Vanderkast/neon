@@ -1,0 +1,8 @@
+plugins {
+    id 'neon-convention'
+}
+
+group 'com.vanderkast.neon'
+version '1.0-RELEASE'
+
+jar.enabled = true
