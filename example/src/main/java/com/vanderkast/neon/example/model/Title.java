@@ -3,16 +3,32 @@ package com.vanderkast.neon.example.model;
 import com.vanderkast.neon.core.model.Category;
 import com.vanderkast.neon.core.model.Note;
 
-public class Title extends TextNote implements Category {
-    private final LinkSupplier links;
+import java.util.Collection;
 
-    public Title(String text, LinkSupplier includedNotes) {
+public class Title extends TextNote implements Category {
+    private final Collection<Note> included;
+
+    public Title(String text, Collection<Note> included) {
         super(text);
-        this.links = includedNotes;
+        this.included = included;
     }
 
     @Override
     public Iterable<? extends Note> getNotes() {
-        return links.get();
+        return included;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Title title = (Title) o;
+        return included.equals(title.included);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

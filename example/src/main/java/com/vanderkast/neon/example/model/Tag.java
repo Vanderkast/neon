@@ -34,4 +34,9 @@ public class Tag implements Link {
     public int hashCode() {
         return name.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

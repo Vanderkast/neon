@@ -26,4 +26,9 @@ public class TextNote implements Note {
     public int hashCode() {
         return text.hashCode();
     }
+
+    @Override
+    public String toString() {
+        return text;
+    }
 }

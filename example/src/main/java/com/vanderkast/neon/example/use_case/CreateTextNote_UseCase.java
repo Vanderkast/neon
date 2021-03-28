@@ -1,7 +1,11 @@
 package com.vanderkast.neon.example.use_case;
 
+import com.vanderkast.neon.core.model.Note;
 import com.vanderkast.neon.example.model.Store;
 import com.vanderkast.neon.example.model.TextNote;
+import com.vanderkast.neon.example.model.Title;
+
+import java.util.Collection;
 
 public class CreateTextNote_UseCase {
     private final Store store;
@@ -13,15 +17,11 @@ public class CreateTextNote_UseCase {
     }
 
     public void create(String text) {
-        var tags = handler.handle(text);
-        if(tags == null || tags.isEmpty())
-            throw new UntaggedNoteException();
-        store.add(new TextNote(text), tags);
+        store.add(new TextNote(text), handler.handle(text));
     }
 
-    public static class UntaggedNoteException extends RuntimeException {
-        public UntaggedNoteException() {
-            super("Current realization of network can't store notes without tags.");
-        }
+    public void create(String title, Collection<Note> links){
+        create(title);
+        store.add(new Title(title, links));
     }
 }
