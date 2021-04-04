@@ -1,4 +1,4 @@
-module com.vanderkast.neon.core {
-    exports com.vanderkast.neon.core;
-    exports com.vanderkast.neon.core.model;
+module neon.core {
+    exports neon.core;
+    exports neon.core.model;
 }

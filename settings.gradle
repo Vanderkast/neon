@@ -1,2 +1,5 @@
 rootProject.name = 'neon'
-include('core', 'example')
+include 'core'
+include 'plugins:tags'
+include 'units:in_memory', 'units:server'
+

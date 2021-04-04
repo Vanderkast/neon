@@ -1,8 +1,10 @@
 plugins {
     id 'neon-convention'
+    id 'java-test-convention'
+    id 'idea'
 }
 
-group 'com.vanderkast.neon'
-version '1.0-RELEASE'
+group 'neon'
+version '1.0'
 
 jar.enabled = true

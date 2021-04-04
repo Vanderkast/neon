@@ -1,0 +1,27 @@
+plugins {
+    id 'neon-convention'
+    id 'java-test-convention'
+    id 'idea'
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+}
+
+group 'neon.units'
+version '0.1-SNAPSHOT'
+
+bootJar {
+    enabled = true
+    mainClassName = 'neon.units.server.Application'
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':plugins:tags')
+    implementation project(':units:in_memory')
+
+    def SPRING_BOOT_VERSION = '2.4.2'
+
+    implementation group: 'org.springframework.boot', name: 'spring-boot', version: SPRING_BOOT_VERSION
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: SPRING_BOOT_VERSION
+
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: SPRING_BOOT_VERSION
+}

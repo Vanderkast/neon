@@ -1,0 +1,13 @@
+plugins {
+    id 'neon-convention'
+    id 'java-test-convention'
+    id 'idea'
+}
+
+group 'neon.units'
+version '0.0-SNAPSHOT'
+
+dependencies {
+    implementation project(':core')
+    implementation project(':plugins:tags')
+}
